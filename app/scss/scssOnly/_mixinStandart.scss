@@ -1,0 +1,20 @@
+//Mixins for use position absolute
+@import 'mixins/absoluteMixins';
+
+//Mixins for use flex
+@import 'mixins/flexMixins';
+
+//UI mixins
+@import 'mixins/UIMixins';
+
+//Mixins with frequent use
+@import 'mixins/frequentMixins';
+
+//Mixins for display grid
+@import 'mixins/gridMixins';
+
+//Mixins for margin
+@import 'mixins/marginMixins';
+
+//Mixins for adaptation
+@import 'mixins/mediaMixins';

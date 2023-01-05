@@ -1,0 +1,32 @@
+// Flex center
+@mixin flexCenter(){
+    justify-content: center;
+    align-items: center;
+}
+
+//Columns
+//External
+// $ai - align-items
+@mixin columns($ai: center){
+    display: flex;
+    justify-content: space-between;
+    align-items: $ai;
+}
+//The column itself
+// $number - number of columns
+@mixin column($number: 3){
+    $width: 100% / $number;
+    width: $width;
+}
+
+// Navbar with indented
+// $class - id or class name for nav item
+// $MarginRight - margin right for nav item without last
+@mixin nav($class:a, $marginRight: 0) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #{$class}:not(:last-of-type){
+        margin-right: $marginRight;
+    }
+}

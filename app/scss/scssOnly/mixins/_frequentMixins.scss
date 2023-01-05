@@ -1,0 +1,28 @@
+// Font
+// $fontSize - font size
+// $fontFamily - font family(If "", then nothing will be installed)
+// $color - font color
+@mixin font($fontSize: 16px, $fontFamily: '', $color: black, $lineHeight: 0){
+    @if $fontFamily != ''{
+        font-family: $fontFamily;
+    }
+    @if $lineHeight != 0{
+        line-height: $lineHeight;
+    }
+    font-size: $fontSize;
+    color: $color;
+}
+
+//Mixin for create cub or circle
+// $px - size(windth and height)
+// $rounded - rounded
+@mixin box($px, $rounded: 0){
+    width: $px;
+    height: $px;
+    border-radius: $rounded;
+}
+
+//Mixin for classic transition
+@mixin transition($typeAnim: ''){
+    transition: .3s $typeAnim all;
+}

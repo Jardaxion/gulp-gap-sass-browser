@@ -1,0 +1,14 @@
+//Centering maring on the vertical middle
+@mixin mVC(){
+    margin: 0 auto;
+}
+
+//Centering margin on the horizontal middle
+@mixin mHC(){
+    margin: auto 0;
+}
+
+//Center margin
+@mixin mC(){
+    margin: auto;
+}

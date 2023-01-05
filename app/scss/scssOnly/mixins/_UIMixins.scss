@@ -1,0 +1,89 @@
+// Modal(It is necessary that the inner window be called modal__inner)
+// $rgba - background color
+// $minWidth - min width modal window
+// $minHight - min height modal window
+// $maxWidth - max width modal window
+// $maxHight - max height modal window
+// $backModal - background color for modal
+// $borRad - radius modal window
+// $padding - padding in modal window
+@mixin modal($rgba: rgba(0, 0, 0, 0.5), $minWidth: 300px, $minHeight: 50px, $maxWidth: none, $maxHeight: none, $backModal: white, $borRad: 10px, $padding: 10px){
+    display: flex;
+    @include flexCenter;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    @include TLa;
+    z-index: 3;
+    pointer-events: none;
+    transition: .7s ease all;
+    transform: translateY(-100vh);
+    opacity: 0;
+    &__inner{
+        min-width: $minWidth;
+        min-height: $minHeight;
+        max-width: $maxWidth;
+        max-height: $maxHeight;
+        background: $backModal;
+        border-radius: $borRad;
+        padding: $padding;
+        transition: .3s all;
+        pointer-events: none;
+    }
+    &__background{
+        z-index: 2;
+        background: $rgba;
+        transition: .5s all;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        pointer-events: none;
+        @include TLa;
+        &.active{
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+    &.active{
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+        .modal__inner{
+            pointer-events: all;
+        }
+    }
+}
+
+//Button
+// $isHoverBack - will the background change on hover
+// $isHovrAll - will the color of the font and background change too
+// $backgorund - background color
+// $backgroundHover - hover background color
+// $color - font color
+// $colorHover - color on hover
+// $transition - transition
+// $isUpper - will the font be in capital letters
+// $borderRadius - rounding
+// $border - border
+@mixin button($isHoverBack: false, $isHoverAll: false,$background: blue, $backgroundHover: black,$color: black, $colorHover: grey, $transition: .3s all, $isUpper: false, $borderRadius: 0, $border: none){
+    background: $background;
+    color: $color;
+    transition: $transition;
+    cursor: pointer;
+    border: $border;
+    border-radius: $borderRadius;
+    @if $isUpper{
+        text-transform: uppercase;
+    }
+    &:hover{
+        @if $isHoverAll{
+            background: $backgroundHover;
+            color: $colorHover;
+        } @else if $isHoverBack{
+            background: $backgroundHover;
+        } @else{
+            color: $colorHover;
+        }
+    }
+}

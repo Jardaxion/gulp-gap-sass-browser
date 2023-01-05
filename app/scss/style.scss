@@ -1,0 +1,26 @@
+@import 'scssOnly/mixinStandart';
+@import 'scssOnly/mixin';
+@import 'scssOnly/vars';
+
+/* Ресет */
+@import 'reset';
+/* Шрифты */
+@import 'fonts';
+/* Библеотеки */
+@import 'libs';
+/* Глобальное */
+@import 'global';
+/* UI компоненты */
+@import 'UI';
+/* Анимации */
+@import 'animation';
+/* Хедер */
+@import 'blocks/header';
+
+/* Оснвоное */
+@import 'blocks/main';
+
+/* Футер */
+@import 'blocks/footer';
+/* Адаптация */
+@import 'media';

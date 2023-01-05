@@ -1,0 +1,26 @@
+//Display grid
+// $gtc - number of columns
+// $gtcw - size of one column (initially one fraction)
+// $gap - gap
+// $gtr - number of lines
+// $gtrw - single line size
+@mixin grid($gtc: 1, $gtcw: 1fr, $gap: 0, $gtr: 0, $gtrw: 1fr){
+    display: grid;
+    grid-template-columns: repeat($gtc, $gtcw);
+    @if $gtr != 0{
+        grid-template-rows: repeat($gtr, $gtrw);
+    }
+    gap: $gap;
+}
+
+// Grid grid
+// $colStart - column start
+// $colEnd - column end
+// $rowStart - line start
+// $rowEnd - line end
+@mixin gridCol($colStart, $colEnd, $rowStart, $rowEnd){
+    grid-column-start: $colStart;
+    grid-column-end: $colEnd;
+    grid-row-start: $rowStart;
+    grid-row-end: $rowEnd;
+}
